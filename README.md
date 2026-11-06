@@ -14,6 +14,10 @@ dotnet run -- --url https://example.com/modified-form --first-name Maya --gender
 
 Exit code `0` = PASS, `1` = FAIL; errors say what could not be resolved. `--url` defaults to the CloudQA page. Values are configurable and the chosen radio/option must already exist.
 
+## Verification status
+
+Verified on Windows with .NET SDK `8.0.427` and Chrome: `dotnet build` completed with 0 warnings and 0 errors; headless Chrome passed on the live CloudQA page with First Name `Atul`, Gender `Male`, State `India`, and on `fixtures/scrambled-form.html` with the reordered fields and decoys. An invalid State (`Atlantis`) correctly returned FAIL rather than selecting a different option.
+
 ## Approach / limitations
 
 Uses exact visible field captions, accessible ARIA labels, control type, and the smallest nearby containing group. Radio buttons are matched by visible accessible name or value. It never assumes a field position or a particular `id`, `name`, `class`, or fixed full-page XPath; ambiguous matches **fail closed**, rather than silently testing the wrong lookalike. The CloudQA page includes lookalike fields in iframes and shadow roots, so only the main document is intentionally searched.
