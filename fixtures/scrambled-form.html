@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Scrambled form — semantic locator demo</title>
+  <style>
+    body { max-width: 42rem; margin: 3rem auto; font: 1rem system-ui, sans-serif; }
+    form { display: grid; gap: 1.2rem; }
+    .box { padding: .8rem; border: 1px solid #bbb; }
+    input, select { margin: .4rem; }
+  </style>
+</head>
+<body>
+  <h1>Reordered profile form</h1>
+  <p>The three target fields use unrelated IDs, names and classes. Similar fields are decoys.</p>
+  <form>
+    <div class="box">
+      <label for="other-person">Last Name</label>
+      <input id="other-person" name="q78" class="random-1" type="text" placeholder="Name">
+    </div>
+    <div class="box">
+      <label for="country-pick">Country</label>
+      <select id="country-pick" name="q79"><option>Choose one</option><option>India</option></select>
+    </div>
+    <div class="box">
+      <label for="region-pick">State</label>
+      <select id="region-pick" name="q80" class="random-2">
+        <option>Choose one</option><option>Canada</option><option>India</option>
+      </select>
+    </div>
+    <div class="box">
+      <label>Gender</label>
+      <div><input id="choice-a" name="q81" type="radio" value="Male"><label for="choice-a">Male</label></div>
+      <div><input id="choice-b" name="q81" type="radio" value="Female"><label for="choice-b">Female</label></div>
+    </div>
+    <div class="box">
+      <label>Preferred Contact</label>
+      <input type="radio" name="q82" value="Male"><span>Male</span>
+      <input type="radio" name="q82" value="Other"><span>Other</span>
+    </div>
+    <div class="box">
+      <label for="person-given">First Name</label>
+      <input id="person-given" name="q83" class="random-3" type="text" placeholder="Name">
+    </div>
+  </form>
+</body>
+</html>
